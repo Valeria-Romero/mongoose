@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+</head>
+
+<body>
+    <h1>Mongoose dashboard</h1>
+    <% for (const animal of animals) { %>
+        <div>
+            <h3><a href="/<%=animal.animalId %>"><%= animal.animal %></a> </h3>
+            <a href="/edit/<%=animal.animalId %>">Edit</a> 
+            <form action="/destroy/<%=animal.animalId %>" method="post">
+                <button type="submit">Remove</button>
+            </form>
+        </div>
+    <% } %>
+    <a href="/new">Add a new Mongoose</a>
+</body>
+
+</html>
